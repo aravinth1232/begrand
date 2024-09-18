@@ -3,7 +3,7 @@
 import React,{useState} from 'react'
 import logo from "../../src/assets/logo.png"
 import Image from 'next/image'
-import { MdOutlineHorizontalRule } from "react-icons/md";
+// import { MdOutlineHorizontalRule } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
