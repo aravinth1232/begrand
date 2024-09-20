@@ -1,6 +1,7 @@
 "use client"
 
 import React,{useState} from 'react'
+import CursorTrail from "../components/CursorTrail"
 import logo from "../../src/assets/logo.png"
 import Image from 'next/image'
 // import { MdOutlineHorizontalRule } from "react-icons/md";
@@ -16,17 +17,23 @@ const Links = [
 
 
 const Header = () => {
+
+
+
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     
     <>
-    
-    <section className='  px-4 w-full lg:h-screen lg:w-fit lg:gap-4 border-2 border-black flex flex-row lg:flex-col items-center justify-between lg:justify-around lg:items-center relative lg:static '>
 
-        <div>
+    <CursorTrail />
+    
+    <section className='  px-4 w-full lg:h-screen lg:w-fit lg:gap-4  flex flex-row lg:flex-col items-center justify-between  lg:items-center relative lg:static '>
+
+        <div >
         <Image
         className='w-14 lg:w-24'
-      src={logo} alt="Picture of the author"
+      src={logo} alt="logo"
       loading="lazy"
     />
         </div>
@@ -34,7 +41,7 @@ const Header = () => {
     <div className=' fixed top-[4%] right-[5%] lg:static'>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative  px-1 w-10 h-8 flex flex-col justify-between items-end lg:items-start group "
+        className="relative  px-1 w-10 h-8 flex flex-col justify-between items-end lg:items-start group z-20"
       >
         {/* Top line */}
         <span
@@ -72,7 +79,7 @@ const Header = () => {
           Links.map((link,index)=>(
           
             <div 
-            className={`mb-4 flex flex-col gap-3 lg:gap-0 transition-opacity duration-500 ease-in-out ${
+            className={`mb-4 flex flex-col gap-3 lg:gap-0 opacity-40 hover:opacity-100 transition-opacity duration-500 ease-in-out ${
               isOpen ? 'opacity-100 delay-800' : 'opacity-0'}`}
             key={index}>
             <p>{`0${link.id}`}</p>
@@ -86,7 +93,7 @@ const Header = () => {
       </div>
 
 
-        <div className='hidden lg:flex flex-col gap-10 '>
+        <div className='hidden lg:flex flex-col gap-10 py-5'>
         
           <FaFacebookF size={20} />
           <FaInstagram size={20}/>
